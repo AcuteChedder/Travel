@@ -5,18 +5,23 @@ export default {
     data() {
         return {
             tours: [],
+            selectedTour: null,
         }
     },
 
     methods: {
         async loadTours() {
             try {
-                let response = await axios.get('/tours'); // Получаем данные с сервера
-                console.log('Tours data from API:', response.data); // Логируем полученные данные
-                this.tours = response.data; // Присваиваем полученные данные в tours
+                let response = await axios.get('/tours'); 
+                console.log('Tours data:', response.data); 
+                this.tours = response.data; 
             } catch (error) {
-                console.error('Ошибка при загрузке туров:', error);  // Логируем ошибку
+                console.error('Ошибка при загрузке туров:', error);  
             }
+        },
+
+        openModal(tour) {
+            this.selectedTour = tour
         }
     },
 
@@ -154,12 +159,132 @@ export default {
                         <p class="block-duration"><img src="../assets/main/duration.png" class="duration-clock" alt="">{{ tour.duration }}</p>
                         <div class="cost-pay">
                             <h1 class="cost">{{ '$' + tour.cost }} <span class="individual">/ person</span></h1>
-                            <button class="cost-btn">Book now</button>
+                            <button class="cost-btn" @click="openModal(tour)">Book now</button>
                         </div>
                     </div>
                     
                 </div>
 
+            </div>
+
+            
+
+        </div>
+    </section>
+
+    <section class="feedback">
+        <div class="container">
+            <div class="feedback-blocks">
+
+                <div class="feedback-block">
+                    <div class="feedback-text">
+                        <h1 class="feedback-title">168k</h1>
+                        <p class="feedback-desc">Happy Clients</p>
+                    </div>
+                    <hr class="feedback-line">
+                </div>
+
+                <div class="feedback-block">
+                    <div class="feedback-text">
+                        <h1 class="feedback-title">+45k</h1>
+                        <p class="feedback-desc">Destinations</p>
+                    </div>
+                    <hr class="feedback-line">
+                </div>
+
+                <div class="feedback-block">
+                    <div class="feedback-text">
+                        <h1 class="feedback-title">+49</h1>
+                        <p class="feedback-desc">Global Branch</p>
+                    </div>
+                    <hr class="feedback-line">
+                </div>
+
+                <div class="feedback-block">
+                    <div class="feedback-text">
+                        <h1 class="feedback-title">+26k</h1>
+                        <p class="feedback-desc">Campaigns</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="services-image">
+                <img src="../assets/main/img-love.png.png" alt="">
+            </div>
+            <div class="services-content">
+                <div class="services-text">
+                    <h1 class="services-title">You will love us</h1>
+                    <p class="services-desc">Because more than 268 other customers have loved us too</p>
+                </div>
+
+                <div class="services-categories">
+
+                    <div class="service">
+                        <img src="../assets/main/secure.png" alt="" class="sevice-img">
+                        <div class="service-text">
+                            <h3 class="service-title">Security Assurance</h3>
+                            <p class="service-desc">Demonstrates commitment to user data security through encryption and secure payment practices</p>
+                            <a href="#!" class="service-link">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="service">
+                        <img src="../assets/main/customer.png" alt="" class="sevice-img">
+                        <div class="service-text">
+                            <h3 class="service-title">Security Assurance</h3>
+                            <p class="service-desc">Demonstrates commitment to user data security through encryption and secure payment practices</p>
+                            <a href="#!" class="service-link">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="service">
+                        <img src="../assets/main/transparent.png" alt="" class="sevice-img">
+                        <div class="service-text">
+                            <h3 class="service-title">Security Assurance</h3>
+                            <p class="service-desc">Demonstrates commitment to user data security through encryption and secure payment practices</p>
+                            <a href="#!" class="service-link">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="service">
+                        <img src="../assets/main/reputable.png" alt="" class="sevice-img">
+                        <div class="service-text">
+                            <h3 class="service-title">Security Assurance</h3>
+                            <p class="service-desc">Demonstrates commitment to user data security through encryption and secure payment practices</p>
+                            <a href="#!" class="service-link">Learn more →</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="popular">
+        <div class="container">
+            <div class="popular-text">
+                <h1 class="popular-title">Popular Destinations</h1>
+                <p class="popular desc">Favorite destinations based on customer reviews</p>
+            </div>
+            <div class="popular-categories">
+                <ul class="categories-list">
+                    <li><a href="#">Categories</a>
+                        <ul>
+                            <li>Family Tour</li>
+                            <li>Asian Tour</li>
+                            <li>European Tour</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Duration</a></li>
+                    <li><a href="#">Review / Rating</a></li>
+                    <li><a href="#">Price range</a></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -392,7 +517,7 @@ a, button {
         background: #fff;
         border-radius: 30px;
         padding: 32px 30px;
-        margin-top: -100px;
+        margin-top: -70px;
         z-index: 3233;
     }
 
@@ -440,4 +565,115 @@ a, button {
         font-size: 14px;
         font-weight: 700;
     }
+
+
+
+    .feedback {
+        margin-top: 130px;
+    }
+
+
+    .feedback-blocks {
+        background-color: #000;
+        border-radius: 32px;
+        display: flex;
+        justify-content: space-between;
+        padding: 90px 192px;
+    }
+    
+    .feedback-block {
+        color: #fff;
+        
+        display: flex;
+    }
+
+    .feedback-line {
+        max-width: 100px;
+    }
+
+    .feedback-title {
+        font-size: 52px;
+    }
+
+    .feedback-desc {
+        font-size: 20px;
+    }
+
+    .feedback-text {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        margin-right: 50px;
+    }
+
+
+
+
+    .services {
+        background-image: url(../assets/main/background-pink.png);
+        background-repeat: no-repeat;
+        margin-top: 100px;
+    }
+
+    .services .container {
+        display: flex;
+        gap: 50px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .service-text {
+        max-width: 220px;
+    }
+
+    .services-categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .services-text {
+        margin-left: 20px;
+    }
+
+    .services-title {
+        font-size: 52px;
+    }
+    
+    .services-desc {
+        font-size: 20px;
+        color: #737373;
+        margin-bottom: 105px;
+    }
+
+    .service {
+        display: flex;
+    }
+
+    .service-desc {
+        font-size: 14px;
+        color: #737373;
+        margin-bottom: 12px;
+    }
+
+    .service-title {
+        font-size: 20px;
+    }
+
+    .sevice-img {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin-top: -14px;
+    }
+
+    .service-link {
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+    }
+
+
+
+    
 </style>
