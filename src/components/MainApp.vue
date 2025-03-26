@@ -6,6 +6,14 @@ export default {
         return {
             tours: [],
             selectedTour: null,
+            showCategories: false,
+            showDuration: false,
+            showReview: false,
+            showPrice: false,
+            categories: ['Adventure', 'Beach', 'Cultural'],
+            durations: ['7 days', '14 days', '21 days'],
+            Reviews: ['Great', 'Good', 'Normal'],
+            Prices: ['Expensive', 'Medium', 'Low'],
         }
     },
 
@@ -22,7 +30,23 @@ export default {
 
         openModal(tour) {
             this.selectedTour = tour
-        }
+        },
+
+        toggleCategories() {
+            this.showCategories = !this.showCategories
+        },
+
+        toggleDuration() {
+            this.showDuration = !this.showDuration
+        },
+
+        toggleReview() {
+            this.showReview = !this.showReview
+        },
+
+        togglePrice() {
+            this.showPrice = !this.showPrice
+        },
     },
 
     mounted() {
@@ -270,22 +294,43 @@ export default {
         <div class="container">
             <div class="popular-text">
                 <h1 class="popular-title">Popular Destinations</h1>
-                <p class="popular desc">Favorite destinations based on customer reviews</p>
+                <p class="popular-desc">Favorite destinations based on customer reviews</p>
             </div>
-            <div class="popular-categories">
-                <ul class="categories-list">
-                    <li><a href="#">Categories</a>
-                        <ul>
-                            <li>Family Tour</li>
-                            <li>Asian Tour</li>
-                            <li>European Tour</li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Duration</a></li>
-                    <li><a href="#">Review / Rating</a></li>
-                    <li><a href="#">Price range</a></li>
-                </ul>
+            <div class="sort">
+                <div class="popular-categories">
+                    <button @click="toggleCategories" class="category-btn">Categories <img src="../assets/main/arrow-down.svg.png" alt=""></button>
+                    <ul v-if="showCategories" class="dropdown-list">
+                        <li class="list-el" v-for="category in categories">
+                            {{ category }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="popular-categories">
+                    <button @click="toggleDuration" class="category-btn">Duration <img src="../assets/main/arrow-down.svg.png" alt=""></button>
+                    <ul v-if="showDuration" class="dropdown-list">
+                        <li class="list-el" v-for="duration in durations">
+                            {{ duration }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="popular-categories">
+                    <button @click="toggleReview" class="category-btn">Reviews <img src="../assets/main/arrow-down.svg.png" alt=""></button>
+                    <ul v-if="showReview" class="dropdown-list">
+                        <li class="list-el" v-for="review in Reviews">
+                            {{ review }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="popular-categories">
+                    <button @click="togglePrice" class="category-btn">Price range <img src="../assets/main/arrow-down.svg.png" alt=""></button>
+                    <ul v-if="showPrice" class="dropdown-list">
+                        <li class="list-el" v-for="price in Prices">
+                            {{ price }}
+                        </li>
+                    </ul>
+                </div>
             </div>
+            
         </div>
     </section>
 </template>
@@ -676,4 +721,66 @@ a, button {
 
 
     
+    .popular {
+        margin-top: 100px;
+    }
+
+    .popular-text {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .popular-title {
+        font-size: 52px;
+    }
+
+    .popular-desc {
+        font-size: 20px;
+        color: #737373;
+        font-weight: 500;
+    }
+
+    .sort {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        margin-top: 46px;
+        position: relative;
+    }
+
+    .category-btn {
+        padding: 10px 18px;
+        border: none;
+        background-color: #E4E6E8;
+        border-radius: 50px;
+    }
+
+    .popular-categories {
+        position: relative;
+    }
+
+    .dropdown-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 5px 20px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-top: 5px;
+        z-index: 100;
+    }
+
+    .list-el {
+        cursor: pointer;
+    }
+
+    .list-el:hover {
+        background-color: #dbdbdb;
+    }
+
 </style>
