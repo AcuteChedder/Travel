@@ -331,6 +331,92 @@ export default {
                 </div>
             </div>
             
+            <div class="popular-tours">
+                <div class="tour">
+                    <img src="../assets/popular/venice.png" alt="" class="tour-img">
+                    <div class="tour-content">
+                        <div class="tour-text">
+                            <h3 class="tour-title">Venice</h3>
+                            <p class="tour-desc">356 Tours, 248 Activities</p>
+                        </div>
+                        <a href=""><img src="../assets/main/Link.png" alt="" class="link-btn"></a>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <img src="../assets/popular/amsterdam.png" alt="" class="tour-img">
+                    <div class="tour-content">
+                        <div class="tour-text">
+                            <h3 class="tour-title">Amsterdam</h3>
+                            <p class="tour-desc">356 Tours, 248 Activities</p>
+                        </div>
+                        <a href=""><img src="../assets/main/Link.png" alt="" class="link-btn"></a>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <img src="../assets/popular/budapest.png" alt="" class="tour-img">
+                    <div class="tour-content">
+                        <div class="tour-text">
+                            <h3 class="tour-title">Budapest</h3>
+                            <p class="tour-desc">356 Tours, 248 Activities</p>
+                        </div>
+                        <a href=""><img src="../assets/main/Link.png" alt="" class="link-btn"></a>
+                    </div>
+                </div>
+
+                <div class="tour">
+                    <img src="../assets/popular/lisobon.png" alt="" class="tour-img">
+                    <div class="tour-content">
+                        <div class="tour-text">
+                            <h3 class="tour-title">Lisbon</h3>
+                            <p class="tour-desc">356 Tours, 248 Activities</p>
+                        </div>
+                        <a href=""><img src="../assets/main/Link.png" alt="" class="link-btn"></a>
+                    </div>
+                </div>
+
+                <div class="second-triple">
+                    <div class="tour">
+                        <img src="../assets/popular/lisobon.png" alt="" class="tour-img">
+                        <div class="tour-content">
+                            <div class="tour-text">
+                                <h3 class="tour-title">Lisbon</h3>
+                                <p class="tour-desc">356 Tours, 248 Activities</p>
+                            </div>
+                            <a href=""><img src="../assets/main/Link.png" alt="" class="link-btn"></a>
+                        </div>
+                    </div>
+
+                    <div class="tour">
+                        <img src="../assets/popular/lisobon.png" alt="" class="tour-img">
+                        <div class="tour-content">
+                            <div class="tour-text">
+                                <h3 class="tour-title">Lisbon</h3>
+                                <p class="tour-desc">356 Tours, 248 Activities</p>
+                            </div>
+                            <a href=""><img src="../assets/main/Link.png" alt="" class="link-btn"></a>
+                        </div>
+                    </div>
+
+                    <div class="tour">
+                        <img src="../assets/popular/lisobon.png" alt="" class="tour-img">
+                        <div class="tour-content">
+                            <div class="tour-text">
+                                <h3 class="tour-title">Lisbon</h3>
+                                <p class="tour-desc">356 Tours, 248 Activities</p>
+                            </div>
+                            <a href=""><img src="../assets/main/Link.png" alt="" class="link-btn"></a>
+                        </div>
+                    </div>
+
+                    <div class="your-tour">
+                        
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 </template>
@@ -781,6 +867,61 @@ a, button {
 
     .list-el:hover {
         background-color: #dbdbdb;
+    }
+
+
+
+
+
+    .popular-tours {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .tour {
+        padding: 20px 16px;
+        border: 1px solid #E4E6E8;
+        border-radius: 24px;
+    }
+
+    .your-tour {
+        padding: 20px 16px;
+        border: 1px solid #E4E6E8;
+        border-radius: 24px;
+        background-color: #FEFA17;
+    }
+
+    .tour-img {
+        border-radius: 20px;
+    }
+
+    .tour-title {
+        font-size: 18px;
+        margin-top: 18px;
+    }
+
+    .tour-desc {
+        font-size: 16px;
+        color: #737373;
+        margin-top: 6px;
+    }
+
+    .tour-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .link-btn {
+        width: 30px;
+        height: 30px;
+        margin-top: 45px;
+    }
+
+    .second-triple {
+        display: flex;
+        gap: 16px;
+        margin-top: 25px;
     }
 
 </style>
