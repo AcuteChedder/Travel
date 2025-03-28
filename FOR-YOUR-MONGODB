@@ -1,7 +1,4 @@
 [{
-  "_id": {
-    "$oid": "67e045e091bf999e1479fc1d"
-  },
   "name": "California Sunset/Twilight Boat Cruise",
   "duration": "7 days 8 nights",
   "description": "Explore the best of California, from San Francisco to Los Angeles.",
@@ -10,9 +7,6 @@
   "cost": 48
 },
 {
-  "_id": {
-    "$oid": "67e045f591bf999e1479fc1e"
-  },
   "name": "Grand Canyon Horseshoe Bend 2 days",
   "duration": "3 days 4 nights",
   "description": "Discover the breathtaking beauty of the Grand Canyon and its surroundings.",
@@ -21,9 +15,6 @@
   "cost": 73
 },
 {
-  "_id": {
-    "$oid": "67e0460891bf999e1479fc1f"
-  },
   "name": "NYC: Food Tastings and Culture Tour",
   "duration": "5 days 6 nights",
   "description": "Experience the vibrant culture and iconic landmarks of New York City.",
