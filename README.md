@@ -5,12 +5,12 @@
  2. Backend: Node.js
  3. BD: MongoDB
 
-📋 Overview
+# 📋 Overview
 
 Travel is a starter template for building modern web applications using Vue 3 with Vite, a Node.js server, and MongoDB.
 It’s perfect for creating travel-related apps or any project requiring a SPA frontend, backend logic, and database integration.
 
-🚀 Quick Start
+# 🚀 Quick Start
 1. Clone the repository
 ```
 git clone https://github.com/AcuteChedder/Travel.git
