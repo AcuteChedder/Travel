@@ -1,10 +1,9 @@
-# travel
+# TRAVEL
 
 # Tech Stack
-
-# Frontend: Vue 3 (Vite)
-# Backend: Node.js
-# BD: MongoDB
+ Frontend: Vue 3 (Vite)
+ Backend: Node.js
+ BD: MongoDB
 
 📋 Overview
 
